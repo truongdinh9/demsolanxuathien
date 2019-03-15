@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pos</title>
+</head>
+<body>
+<p id="mang"></p>
+<button onclick="search()"> Search</button>
+<script>
+    let arr = []
+    for (let i = 0; i < 100; i++) {
+        arr[i] = Math.round(Math.random() * 100 + 1);
+        if (i % 10 === 9) {
+            mang.innerHTML += arr[i] + "<br/>"
+        } else mang.innerHTML += arr[i] + ","
+    }
+    mang.innerHTML+="<hr/>"
+
+    function search() {
+        let n = parseInt(prompt("Enter a number to search for"))
+        let count = 0;
+        let str = ""
+        for (let i = 0; i < 100; i++) {
+            if (n === arr[i]) {
+                count++;
+                str += " " + i;
+            }
+        }
+        if (count === 0) {
+            mang.innerHTML += n + " is not Found"
+        } else {
+            mang.innerHTML += "Found " + n + " " + count + " time at position: " + str
+        }
+        mang.innerHTML += "<br/>"
+
+    }
+</script>
+</body>
+</html>
